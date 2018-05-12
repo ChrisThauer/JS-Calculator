@@ -1,0 +1,121 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.calculator {
+  height: 600px;
+  width: 400px;
+  background: #6d6d6d;
+  margin: 150px auto;
+  border-radius: 15px;
+}
+
+.display {
+  width: 90%;
+  height: 50px;
+  background: #c3c3c3;
+  position: relative;
+  left: 5%;
+  top: 20px;
+  border-radius: 3px;
+}
+
+.displayText {
+  font-size: 2rem;
+  margin: 0;
+  padding-top: 5px;
+  padding-right: 5px;
+  text-align: right;
+  cursor: default;
+}
+
+#clear {
+  background-color: #0098a1;
+  width: 350px;
+  color: #FFFFFF;
+  margin: 50px auto 0 auto;
+  text-align: center;
+  padding: 10px;
+  font-size: 20px;
+  border-radius: 10px;
+}
+
+#clear:hover {
+  background-color: #00858e;
+}
+
+.keyboard {
+  display: flex;
+  flex-direction: row;
+  margin: 20px;
+}
+
+.numbers {
+  width: 300px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.operators {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.numButton,
+.operator {
+  height: 90px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.numButton {
+  width: 90px;
+  margin: 5px 5px 5px 0;
+  background-color: #cfcfcf;
+}
+
+.numButton:hover {
+  background-color: #afafaf;
+}
+
+.equalButton {
+  background-color: #d6b928;
+}
+
+.equalButton:hover {
+  background-color: #bca223;
+}
+
+.operator {
+  width: 55px;
+  background-color: #14339b;
+  margin: 5px;
+}
+
+.operator:hover {
+  background-color: #112b84;
+}
+
+.keypadText {
+  color: #000000;
+  line-height: 90px;
+  margin: 0;
+  font-size: 35px;
+}
+
+.operatorText {
+  color: #cfcfcf;
+}
+
+#clear,
+.operator,
+.numButton {
+  cursor: pointer;
+}

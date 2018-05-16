@@ -48,6 +48,7 @@ numButtons.forEach(function (btn) {
 const clearBtn = document.querySelector('#clear');
 clearBtn.addEventListener('click', () => {
   currentNum = '';
+  savedNum = '';
   setDisplay();
 });
 
@@ -66,6 +67,9 @@ decimalBtn.addEventListener('click', () => {
 const operators = [...document.querySelectorAll('.operator')];
 operators.forEach(function (btn) {
   btn.addEventListener('click', function () {
+    if (savedNum !== '' && currentOperation !== '') {
+      calculate();
+    }
     savedNum = currentNum;
     currentNum = '';
     currentOperation = this.id;
@@ -75,15 +79,19 @@ operators.forEach(function (btn) {
 // Equals Button
 const equalsBtn = document.querySelector('.equalButton');
 equalsBtn.addEventListener('click', function () {
-  console.log(currentOperation);
-  console.log(operate(window[currentOperation], parseFloat(savedNum), parseFloat(currentNum)));
+  if (currentOperation === '') return;
+  calculate();
+  currentOperation = '';
+});
+
+function calculate() {
   let operation = operate(window[currentOperation], parseFloat(savedNum), parseFloat(currentNum));
   currentNum = operation.toString();
   if (currentNum.length > 17) {
-    currentNum = 'NaN';
+    currentNum = currentNum.slice(0,18);
   }
   setDisplay();
-});
+}
 
 // Button Click Display Function
 const btns = [...document.querySelectorAll('.btn')];

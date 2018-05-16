@@ -10,7 +10,7 @@ body {
   height: 600px;
   width: 400px;
   background: #6d6d6d;
-  margin: 150px auto;
+  margin: 50px auto;
   border-radius: 15px;
 }
 
@@ -69,19 +69,24 @@ body {
 }
 
 .numButton,
-.operator {
+.operator,
+.equalButton,
+.decimalButton {
   height: 90px;
   border-radius: 10px;
   text-align: center;
 }
 
-.numButton {
+.numButton,
+.equalButton,
+.decimalButton {
   width: 90px;
   margin: 5px 5px 5px 0;
   background-color: #cfcfcf;
 }
 
-.numButton:hover {
+.numButton:hover,
+.decimalButton:hover {
   background-color: #afafaf;
 }
 
@@ -116,6 +121,20 @@ body {
 
 #clear,
 .operator,
-.numButton {
+.numButton,
+.equalButton,
+.decimalButton {
   cursor: pointer;
+}
+
+.btn {
+  transition: 0.25s;
+}
+
+.clicked {
+  -webkit-transform: scale(0.95);
+  -moz-transform: scale(0.95);
+  -ms-transform: scale(0.95);
+  -o-transform: scale(0.95);
+  transform: scale(0.95);
 }
